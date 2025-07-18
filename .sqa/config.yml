@@ -1,0 +1,68 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/m-team-kit/drift-watch:
+      branch: main
+      repo: https://github.com/m-team-kit/drift-watch
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/m-team-kit/drift-watch git:
+        commands:
+        - /usr/bin/env sh .sqa/script.boozy-scarlet-turkey.sh
+        container: qc.acc_dorky-rose-camel
+  QC.Doc:
+    repos:
+      github.com/m-team-kit/drift-watch find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.leaky-ivory-paradise.sh
+        container: qc.doc_tasty-flax-caracal
+      github.com/m-team-kit/drift-watch git:
+        commands:
+        - /usr/bin/env sh .sqa/script.crabby-malachite-coyote.sh
+        container: qc.doc_scummy-firebrick-dogfish
+      github.com/m-team-kit/drift-watch markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaky-gold-chinook.sh
+        container: qc.doc_cloudy-tan-newfoundland
+  QC.Lic:
+    repos:
+      github.com/m-team-kit/drift-watch licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.wheezy-magnolia-seal.sh
+        container: qc.lic_jumpy-gamboge-turkey
+  QC.Sec:
+    repos:
+      github.com/m-team-kit/drift-watch bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.wiggy-teal-rhinoceros.sh
+        container: qc.sec_ugly-red-termite
+  QC.Sty:
+    repos:
+      github.com/m-team-kit/drift-watch flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.slimy-cerulean-iguana.sh
+        container: qc.sty_jumpy-myrtle-eagle
+      github.com/m-team-kit/drift-watch jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.sunny-platinum-setter.sh
+        container: qc.sty_craggy-carmine-cassowary
+  QC.Uni:
+    repos:
+      github.com/m-team-kit/drift-watch pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.cozy-magnolia-robin.sh
+        container: qc.uni_squeaky-ochre-seahorse
+  QC.Ver:
+    repos:
+      github.com/m-team-kit/drift-watch get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.grumpy-blue-tzu.sh
+        container: qc.ver_hasty-peach-gerbil
+timeout: 5400
