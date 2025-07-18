@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/m-team-kit/drift-watch &&
-    find_doc_files.py --file_type all
+cd github.com/ai4os/ai4-docs &&
+    git rev-parse --is-inside-work-tree 
 )

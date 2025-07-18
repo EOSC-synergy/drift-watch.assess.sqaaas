@@ -4,6 +4,9 @@ config:
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/ai4os/ai4-docs:
+      branch: master
+      repo: https://github.com/ai4os/ai4-docs
     github.com/m-team-kit/drift-watch:
       branch: main
       repo: https://github.com/m-team-kit/drift-watch
@@ -15,54 +18,58 @@ sqa_criteria:
     repos:
       github.com/m-team-kit/drift-watch git:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-scarlet-turkey.sh
-        container: qc.acc_dorky-rose-camel
+        - /usr/bin/env sh .sqa/script.baggy-lavender-argentino.sh
+        container: qc.acc_cranky-linen-akbash
   QC.Doc:
     repos:
-      github.com/m-team-kit/drift-watch find_doc_files.py:
+      github.com/ai4os/ai4-docs find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.leaky-ivory-paradise.sh
-        container: qc.doc_tasty-flax-caracal
-      github.com/m-team-kit/drift-watch git:
+        - /usr/bin/env sh .sqa/script.woolly-salmon-whale.sh
+        container: qc.doc_trippy-myrtle-caracal
+      github.com/ai4os/ai4-docs git:
         commands:
-        - /usr/bin/env sh .sqa/script.crabby-malachite-coyote.sh
-        container: qc.doc_scummy-firebrick-dogfish
-      github.com/m-team-kit/drift-watch markdownlint:
+        - /usr/bin/env sh .sqa/script.surly-beige-pinscher.sh
+        container: qc.doc_crappy-puce-sponge
+      github.com/ai4os/ai4-docs markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.shaky-gold-chinook.sh
-        container: qc.doc_cloudy-tan-newfoundland
+        - /usr/bin/env sh .sqa/script.tasty-puce-mau.sh
+        container: qc.doc_chewy-wisteria-coyote
+      github.com/ai4os/ai4-docs restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.goopy-heliotrope-bordeaux.sh
+        container: qc.doc_lousy-bistre-chimpanzee
   QC.Lic:
     repos:
       github.com/m-team-kit/drift-watch licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.wheezy-magnolia-seal.sh
-        container: qc.lic_jumpy-gamboge-turkey
+        - /usr/bin/env sh .sqa/script.sloppy-orange-dog.sh
+        container: qc.lic_cozy-rose-bee
   QC.Sec:
     repos:
       github.com/m-team-kit/drift-watch bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.wiggy-teal-rhinoceros.sh
-        container: qc.sec_ugly-red-termite
+        - /usr/bin/env sh .sqa/script.muggy-turquoise-havanese.sh
+        container: qc.sec_shaky-magenta-boar
   QC.Sty:
     repos:
       github.com/m-team-kit/drift-watch flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.slimy-cerulean-iguana.sh
-        container: qc.sty_jumpy-myrtle-eagle
+        - /usr/bin/env sh .sqa/script.scummy-cobalt-salamander.sh
+        container: qc.sty_gloppy-seashell-worm
       github.com/m-team-kit/drift-watch jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-platinum-setter.sh
-        container: qc.sty_craggy-carmine-cassowary
+        - /usr/bin/env sh .sqa/script.homey-rust-frigatebird.sh
+        container: qc.sty_sleazy-purple-barnacle
   QC.Uni:
     repos:
       github.com/m-team-kit/drift-watch pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.cozy-magnolia-robin.sh
-        container: qc.uni_squeaky-ochre-seahorse
+        - /usr/bin/env sh .sqa/script.scaly-sapphire-armadillo.sh
+        container: qc.uni_greasy-cinnabar-tarantula
   QC.Ver:
     repos:
       github.com/m-team-kit/drift-watch get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.grumpy-blue-tzu.sh
-        container: qc.ver_hasty-peach-gerbil
+        - /usr/bin/env sh .sqa/script.blurry-alizarin-elephant.sh
+        container: qc.ver_stuffy-orchid-gharial
 timeout: 5400
